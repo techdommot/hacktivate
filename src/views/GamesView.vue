@@ -92,12 +92,10 @@
 
 <script setup lang="ts">
 import { useBookingStore } from '@/stores/bookingStore'
-import { usePlayerStore } from '@/stores/playerStore'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const bookingStore = useBookingStore()
-const playerStore = usePlayerStore()
 const games = bookingStore.games
 
 function handleBookClick(gameId: number) {

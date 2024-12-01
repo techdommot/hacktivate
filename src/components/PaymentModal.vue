@@ -16,7 +16,7 @@
       
       <div class="space-y-6">
         <div class="bg-background-light p-4 rounded-lg">
-          <p class="font-medium text-text">Deposit Amount: ${{ amount }}</p>
+          <p class="font-medium text-text">Deposit Amount: ${{ props.amount }}</p>
           <p class="text-sm text-text-muted">10% of total booking amount</p>
         </div>
 

@@ -48,7 +48,7 @@ const router = createRouter({
   ]
 })
 
-router.beforeEach((to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+router.beforeEach((to: RouteLocationNormalized, _from: RouteLocationNormalized, next: NavigationGuardNext) => {
   const playerStore = usePlayerStore()
   
   if (to.name === 'profile' && to.query.email) {

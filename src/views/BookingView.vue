@@ -140,7 +140,7 @@ const handleSubmit = () => {
 const handlePaymentSuccess = () => {
   if (!playerStore.currentPlayer || !game) return
 
-  const booking = bookingStore.createBooking({
+  bookingStore.createBooking({
     gameId: game.id,
     date: formData.value.date,
     time: formData.value.time,
@@ -153,10 +153,5 @@ const handlePaymentSuccess = () => {
 
   playerStore.addPoints(Math.floor(depositAmount.value / 10))
   router.push('/dashboard')
-}
-
-const handleDateChange = (event: Event) => {
-  const target = event.target as HTMLInputElement;
-  formData.value.date = target.value;
 }
 </script> 

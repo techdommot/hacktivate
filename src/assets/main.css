@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-text;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-text px-4 py-2 rounded-lg 
+           hover:bg-primary-dark transition-all duration-300
+           transform hover:scale-105 hover:shadow-glow
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50
+           font-medium;
+  }
+  
+  .btn-secondary {
+    @apply bg-background-light text-text px-4 py-2 rounded-lg 
+           border border-primary/20
+           hover:border-primary/50 transition-all duration-300
+           transform hover:scale-105
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50
+           font-medium;
+  }
+  
+  .input-field {
+    @apply bg-background-light border border-border rounded-lg px-4 py-2
+           text-text placeholder-text-dark
+           focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
+           transition-all duration-300;
+  }
+  
+  .card {
+    @apply bg-background-card rounded-lg shadow-card p-6
+           border border-border/50
+           backdrop-blur-sm;
+  }
+  
+  .page-title {
+    @apply text-3xl font-bold mb-6
+           bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent;
+  }
+  
+  .section-title {
+    @apply text-2xl font-bold text-text mb-4;
+  }
+
+  .nav-link {
+    @apply text-text-muted hover:text-primary-light transition-colors duration-300;
+  }
+
+  .form-group {
+    @apply space-y-2;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-text-muted;
+  }
+
+  .badge {
+    @apply px-2 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-primary {
+    @apply bg-primary/10 text-primary-light border border-primary/20;
+  }
+
+  .badge-success {
+    @apply bg-success/10 text-success border border-success/20;
+  }
+
+  .badge-warning {
+    @apply bg-warning/10 text-warning border border-warning/20;
+  }
+
+  /* Table Styles */
+  .table-container {
+    @apply overflow-x-auto rounded-lg border border-border;
+  }
+
+  .table {
+    @apply min-w-full divide-y divide-border;
+  }
+
+  .table th {
+    @apply px-6 py-3 bg-background-light text-left text-xs font-medium text-text-muted uppercase tracking-wider;
+  }
+
+  .table td {
+    @apply px-6 py-4 whitespace-nowrap text-sm text-text bg-background-card;
+  }
+
+  /* Card Hover Effect */
+  .hover-card {
+    @apply transition-all duration-300 hover:shadow-glow
+           hover:border-primary/30 hover:-translate-y-1;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-background-light rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/30;
+}
+
+/* Animations */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Selection */
+::selection {
+  @apply bg-primary/20 text-text;
+} 
